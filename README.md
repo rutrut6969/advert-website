@@ -3,17 +3,25 @@
 This is a website that I will build to be used as an advertisement for my services
 
 Services: {
+  <br />
   Build Basic Website:{
+    <br />
     3 pages,
+    <br />
     $40 per hour or $1,000,
+    <br />
     Full customization.
+    <br />
   }
+  <br />
   Build More Advanced Site: {
+    <br />
     3 pages,
     Back-end included (For forms / displaying data to DOM),
     $55 per hour or $1,500,
     Full customization
   }
+  <br />
   Build A Web Application: {
     $100 per hour or $4,000,
     description: {
