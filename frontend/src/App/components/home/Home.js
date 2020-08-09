@@ -1,11 +1,15 @@
 import React from 'react';
-// import { useLocation } from 'react-location';
+import Header from './home-components/Header';
+import MiddleContent from './home-components/MiddleContent';
+import BottomContent from './home-components/BottomContent';
 import './home.css';
 
 export default function home() {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <Header />
+      <MiddleContent />
+      <BottomContent />
     </div>
   );
 }
