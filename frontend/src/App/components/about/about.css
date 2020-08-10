@@ -1,0 +1,12 @@
+.About {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 81vh;
+}
+
+.About > p {
+  width: 75%;
+}
