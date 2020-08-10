@@ -65,6 +65,7 @@ export default function Footer({
           <animated.div style={contact_bar} className='bar' />
         </div>
       </nav>
+      <p className='copy'>&copy; DevDaB Co.</p>
     </div>
   );
 }

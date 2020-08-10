@@ -24,7 +24,7 @@ export default function Nav({
   });
 
   return (
-    <div className='nav header'>
+    <div className='nav'>
       <div className='logo'>Logo</div>
 
       <nav className='links'>
