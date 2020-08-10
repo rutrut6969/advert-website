@@ -12,7 +12,10 @@ export default function About() {
         I'm here now. Just trying to bring some bread to the table. I'm here to
         do everything I can to make your internet dreams come true. I'm working
         on developing some more skills, and I'm going to be making mobile
-        applications and such soon.
+        applications and such soon. So I ask you, if you're interested in owning
+        your own website, I will include the source code, and I will deploy the
+        site for you if you wish. But any revisions you need done will cost a
+        small amount.
       </p>
     </div>
   );
