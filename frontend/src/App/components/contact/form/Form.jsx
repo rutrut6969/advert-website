@@ -2,6 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 export default function Form({ change, form }) {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    fetch(
+      `http://localhost:4000/send-text?recipient=${'+16182699499'}&message=${
+        form.message
+      }&name=${form.name}&email=${form.email}&phone=${form.phone}&packaged=${
+        form.package
+      }`
+    ).catch((err) => console.error(err));
+    setTimeout(
+      () =>
+        alert(
+          'Thank you for reaching out to me I will get ahold of you as soon as I can!'
+        ),
+      500
+    );
+  };
+
   const [toggle, setToggle] = useState({
     name: false,
     email: false,
@@ -39,7 +57,7 @@ export default function Form({ change, form }) {
   };
 
   useEffect(() => {
-    if (form.name != '') {
+    if (form.name !== '') {
       setToggle({
         ...toggle,
         name: true,
@@ -50,7 +68,7 @@ export default function Form({ change, form }) {
         name: false,
       });
     }
-    if (form.email != '') {
+    if (form.email !== '') {
       setToggle({
         ...toggle,
         email: true,
@@ -61,7 +79,7 @@ export default function Form({ change, form }) {
         email: false,
       });
     }
-    if (form.phone != '') {
+    if (form.phone !== '') {
       setToggle({
         ...toggle,
         phone: true,
@@ -72,7 +90,7 @@ export default function Form({ change, form }) {
         phone: false,
       });
     }
-    if (form.package != '') {
+    if (form.package !== '') {
       setToggle({
         ...toggle,
         package: true,
@@ -83,7 +101,7 @@ export default function Form({ change, form }) {
         package: false,
       });
     }
-    if (form.message != '') {
+    if (form.message !== '') {
       setToggle({
         ...toggle,
         message: true,
@@ -94,7 +112,7 @@ export default function Form({ change, form }) {
         message: false,
       });
     }
-  }, [form]);
+  }, []);
 
   return (
     <form>
@@ -165,7 +183,7 @@ export default function Form({ change, form }) {
         </animated.label>
       </div>
 
-      <button type='submit' className='button'>
+      <button type='submit' onClick={onSubmit} className='button'>
         Submit Info
       </button>
     </form>
