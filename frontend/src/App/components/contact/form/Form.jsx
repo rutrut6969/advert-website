@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
+import twilio from 'twilio';
 
 export default function Form({ change, form }) {
+  const accountSid = 'ACef9fa9f0d8324f02842689b653d4506f';
+  const authToken = 'cf069c6070b05fd246929294ab37404b';
+  const client = new twilio(accountSid, authToken);
+
   const onSubmit = (e) => {
     e.preventDefault();
-    fetch(
-      `http://localhost:4000/send-text?recipient=${'+16182699499'}&message=${
-        form.message
-      }&name=${form.name}&email=${form.email}&phone=${form.phone}&packaged=${
-        form.package
-      }`
-    ).catch((err) => console.error(err));
-    setTimeout(
-      () =>
-        alert(
-          'Thank you for reaching out to me I will get ahold of you as soon as I can!'
-        ),
-      500
-    );
+    client.messages
+      .create({
+        body: `Name: ${form.name}, Phone: ${form.phone}, E-mail: ${form.email}, Package: ${form.packaged}, Message: ${form.message}`,
+        to: '+16182699499',
+        from: '+12058437485', //From Twilio
+      })
+      .then((message) => {
+        console.log(message.body);
+      });
   };
 
   const [toggle, setToggle] = useState({
